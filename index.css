@@ -1,0 +1,253 @@
+:root {
+    background-color: #1C1C1C;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    --accent-color: #10B981;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #ECFDF5;
+    width: 550px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 64px;
+    padding: 50px;
+}
+
+.intro > h1, .intro > h2 {
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    margin: 0;
+}
+
+.intro > h1 {
+    color: #2B283A;
+}
+
+.intro > h2 {
+    color: var(--accent-color);
+}
+
+.intro > p {
+    font-size: 20px;
+    color: #6B7280;
+}
+
+.options {
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B7280;    
+    padding: 10px 10px;
+    width: 440px;
+    box-shadow: 2px 2px 3px #2B283A55;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options > p {
+    font-size: 16px;
+    font-weight: 800;
+    color: #6B7280; 
+    display: flex;
+    justify-content: end;
+    margin: 0 0 0 auto;
+
+}
+
+.option-container > h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.option-container.include-container {
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.pwd-length-control {
+    display: flex;
+    padding: 0;
+    margin: 8 0 0 0;
+    align-items: center;
+    height: 16px;
+}
+
+#pwd-length {
+    margin-left: 5px;
+}
+
+.container > button {
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    width: 191px;
+    height: 42px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 30px;
+}
+
+.container > hr {
+    color: #D5D4D8;
+    width: 446px;
+    margin-top: 40px;
+    align-self: flex-end;
+    margin-left: 0px;
+}
+
+.pwd-container {
+    display: flex;
+    justify-content: start;
+}
+
+#pwd-first, #pwd-second {
+    opacity: 0%;
+}
+
+.created-pwd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #273549;
+    border-radius: 6px;
+    width: 211px;
+    height: 39px;
+    color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 500;
+    margin:0 25px 0 0;
+}
+
+.created-pwd:hover {
+    color: white;
+}
+
+#click-hint {
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0%;
+    margin: 10px 0 5px 0;
+}
+/*----- slider control -----*/
+.slidecontainer {
+    width: 115px; /* Width of the outside container */
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px;
+    border-radius: 50%; 
+    background: var(--accent-color); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px;
+    border-radius: 50%;
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+/*----- toggle control -----*/
+/* The switch - the box around the toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+    margin-top: 5px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The toggle */
+  .toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .toggle:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .toggle {
+    background-color: var(--accent-color);
+  }
+  
+  input:focus + .toggle {
+    box-shadow: 0 0 1px var(--accent-color);
+  }
+  
+  input:checked + .toggle:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+  }
+  
+  /* Rounded toggle */
+  .toggle.round {
+    border-radius: 17px;
+  }
+  
+  .toggle.round:before {
+    border-radius: 50%;
+  }
